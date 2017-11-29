@@ -10,27 +10,20 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author hthoma
+ * @author Harry Thomasian
  */
-public class javaconnect {
+public class sqlconnector {
     private static Connection connection=null;
     String username, password = null;
     
 
-    public javaconnect(String username, String password){
+    public sqlconnector(String username, String password){
     this.username = username;
     this.password = password; 
     
      
  }   
-        public javaconnect(){
-    this.username = "NULL";
-    this.password = "NULL"; 
-    
-     
- }   
-       
-    
+
     public boolean connectDb() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException{
         
         Object newInstance;
@@ -39,4 +32,8 @@ public class javaconnect {
         return true;
     }
     
+    public String runSQL(String sqlcommand){
+        //TODO: Create runSQL class
+        return "Not done yet";
+    }
 }

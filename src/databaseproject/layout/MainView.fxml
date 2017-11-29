@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"fx:controller="databaseproject.layoutcontroller.MainViewController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -21,9 +21,9 @@
                   <MenuItem mnemonicParsing="false" text="Quit" />
           </items>
         </Menu>
-        <Menu mnemonicParsing="false" text="Help">
+        <Menu onAction="#handleMenuClick" id="moreselect" fx:id="moreselect" mnemonicParsing="false" text="Help" >
           <items>
-            <MenuItem mnemonicParsing="false" text="About MDY&amp;G DB" />
+            <MenuItem onAction="#handleMenuClick" id="helpselect" fx:id="helpselect"  mnemonicParsing="false" text="About MDY&amp;G DB" />
           </items>
         </Menu>
       </menus>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="211.0" prefWidth="291.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="257.0" prefWidth="285.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This Application was developed by " />
+            <Text fill="#004dff" layoutX="14.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Harry Thomasian" />
+            <Text fill="#004dff" layoutX="13.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matt Stillwell" />
+            <Text fill="#004dff" layoutX="13.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Montrell Jubilee" />
+            <Text fill="#004dff" layoutX="13.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Taylor" />
+            <Text layoutX="208.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Version 0.1" />
+            <Text layoutX="14.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Any issues?" wrappingWidth="78.45067656040192" />
+            <Text layoutX="14.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email hthoma12@students.towson.edu" wrappingWidth="239.453125" />
+            <Button layoutX="127.0" layoutY="174.0" mnemonicParsing="false" text="OK" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

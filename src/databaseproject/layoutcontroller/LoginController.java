@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package databaseproject;
+package databaseproject.layoutcontroller;
 
+import databaseproject.sqlconnector;
 import java.io.IOException;
 import static java.lang.Thread.sleep;
 import java.net.URL;
@@ -46,8 +47,8 @@ public class LoginController implements Initializable {
  
        strusername = username.getText();
        strpassword = password.getText();
-       javaconnect connect;
-        connect = new javaconnect(strusername,strpassword);
+       sqlconnector connect;
+        connect = new sqlconnector(strusername,strpassword);
         try {
            connected = connect.connectDb();
         } catch (ClassNotFoundException ex) {
@@ -79,7 +80,7 @@ public class LoginController implements Initializable {
             }
                      }
         else
-            System.out.println("Couln't Connect");
+            System.out.println("Couldn't Connect");
       
        
         
