@@ -14,6 +14,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
@@ -41,10 +42,21 @@ public class MainViewController implements Initializable {
     }  
     
     @FXML
-    private void handleMenuClick(ActionEvent event) throws InterruptedException{
-        //WHY DOES THIS NOT WORK?
+    private void handleMenuClick(ActionEvent event) throws InterruptedException, IOException{
+     
         MenuItem target  = (MenuItem) event.getSource();
-        System.out.println("TEST " + target.getId());
+        switch(target.getId()){
+            case "helpselect":
+                             Stage stage = new Stage();
+                             Parent root;
+                             root = FXMLLoader.load(getClass().getClassLoader().getResource("databaseproject/layout/HelpInfo.fxml"));
+                             Scene scene = new Scene(root);
+                             stage.setScene(scene);
+                             stage.show();
+                             ((Node)(event.getSource())).getScene().getWindow().hide();
+                         break;
+            
+        }
     
     }
     

@@ -17,7 +17,6 @@
             <Text layoutX="208.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Version 0.1" />
             <Text layoutX="14.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Any issues?" wrappingWidth="78.45067656040192" />
             <Text layoutX="14.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email hthoma12@students.towson.edu" wrappingWidth="239.453125" />
-            <Button layoutX="127.0" layoutY="174.0" mnemonicParsing="false" text="OK" />
          </children>
     </AnchorPane>
   </children>
