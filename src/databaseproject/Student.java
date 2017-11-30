@@ -22,6 +22,16 @@ public class Student {
         this.PhoneNum = PhoneNum;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" + "FName=" + FName + ", Mname=" + Mname + ", Lname=" + Lname + ", SID=" + SID + ", RNum=" + RNum + ", Delegation=" + Delegation + ", PhoneNum=" + PhoneNum + '}';
+    }
+
+    public Student(String FName, String Lname) {
+        this.FName = FName;
+        this.Lname = Lname;
+    }
+
     public String getFName() {
         return FName;
     }

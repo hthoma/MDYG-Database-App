@@ -16,7 +16,13 @@ import java.util.logging.Logger;
 public class sqlconnector {
     private static Connection connection=null;
     String username, password = null;
+
+    public sqlconnector() {
+    }
     
+    public static Connection getConnector(){
+        return connection;
+    }
 
     public sqlconnector(String username, String password){
     this.username = username;
@@ -39,22 +45,20 @@ public class sqlconnector {
     }
     
     public ArrayList<Student> downloadStudents() throws SQLException{
-        
+        ArrayList<Student> students = new ArrayList<Student>();
           PreparedStatement updateStaff;
         Statement queryStatement = connection.createStatement();
         updateStaff = null;
-            String querys= "SELECT FName, LName FROM mjubil1db.Student;";
+            String querys= "SELECT * FROM mjubil1db.Student;";
             ResultSet results = queryStatement.executeQuery(querys);
             while(results.next())
             {
-                
-                System.out.print(results.getString("FName"));
-                System.out.print("    ");
-                System.out.print(results.getString("LName"));
-                System.out.println();
+                Student astudent;
+            astudent = new Student(results.getString("FName"),results.getString("MName"),results.getString("LName"),results.getString("StudentID"), results.getString("RoomNum"), results.getString("DelegID"), results.getString("PhoneNum"));
+                students.add(astudent);
             }   
 
         
-        return null;
+        return students;
     }
 }

@@ -54,7 +54,7 @@ public class LoginController implements Initializable {
         
         try {
            connected = connect.connectDb();
-          ArrayList<Student> ewr =  connect.downloadStudents();
+        //  ArrayList<Student> ewr =  connect.downloadStudents();
         } catch (ClassNotFoundException ex) {
             errormsg.setText("ClassNotFoundException Occured: If you can see this a programmer really messed up");
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
