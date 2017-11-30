@@ -5,6 +5,7 @@
  */
 package databaseproject.layoutcontroller;
 
+import databaseproject.Student;
 import databaseproject.sqlconnector;
 import java.io.IOException;
 import static java.lang.Thread.sleep;
@@ -16,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXMLLoader;
@@ -49,8 +51,10 @@ public class LoginController implements Initializable {
        strpassword = password.getText();
        sqlconnector connect;
         connect = new sqlconnector(strusername,strpassword);
+        
         try {
            connected = connect.connectDb();
+          ArrayList<Student> ewr =  connect.downloadStudents();
         } catch (ClassNotFoundException ex) {
             errormsg.setText("ClassNotFoundException Occured: If you can see this a programmer really messed up");
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
