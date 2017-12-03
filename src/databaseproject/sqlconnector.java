@@ -15,6 +15,7 @@ import java.util.logging.Logger;
  */
 public class sqlconnector {
     private static Connection connection=null;
+    private static Student selectedstudent = null;
     String username, password = null;
     
 
@@ -44,7 +45,13 @@ public class sqlconnector {
         //TODO: Create runSQL class
         return "Not done yet";
     }
+    public static void setstudent(Student student){
+        selectedstudent = student;
+    }
     
+    public static Student getstudent(){
+        return selectedstudent;
+    }
     public ArrayList<Student> downloadStudents() throws SQLException{
         ArrayList<Student> students = new ArrayList<Student>();
           PreparedStatement updateStaff;

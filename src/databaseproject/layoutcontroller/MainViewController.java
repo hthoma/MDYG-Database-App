@@ -85,9 +85,20 @@ public class MainViewController implements Initializable {
         switch(target.getId()){
             case "refreshlist":renderList();
             break;
-            case "inspectstudent": Student astudent = StudentTable.getSelectionModel().getSelectedItem();
-            
+            case "inspectstudent": 
+           if(StudentTable.getSelectionModel().getSelectedItem() != null){
+            Student astudent = StudentTable.getSelectionModel().getSelectedItem();
+           sqlconnector sql = new sqlconnector();
+            sql.setstudent(astudent);
             System.out.println(astudent.getFName() + " selected!");
+            Stage stage = new Stage();
+                             Parent root;
+                             root = FXMLLoader.load(getClass().getClassLoader().getResource("databaseproject/layout/StudentView.fxml"));
+                             Scene scene = new Scene(root);
+                             stage.setScene(scene);
+                             stage.show();
+           }
+           
             break;
                             
                           
