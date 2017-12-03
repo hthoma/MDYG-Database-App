@@ -7,8 +7,6 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <VBox prefHeight="554.0" prefWidth="891.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="databaseproject.layoutcontroller.MainViewController">
   <children>
@@ -30,15 +28,11 @@
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="554.0" prefWidth="735.0" VBox.vgrow="ALWAYS">
       <children>
-            <TableView id="StudentName" fx:id="StudentName" layoutX="14.0" layoutY="130.0" prefHeight="388.0" prefWidth="870.0">
+            <TableView id="StudentTable" fx:id="StudentTable" layoutX="14.0" layoutY="130.0" prefHeight="388.0" prefWidth="870.0">
             
             </TableView>
-            <Text layoutX="14.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello Montrell!">
-               <font>
-                  <Font size="29.0" />
-               </font>
-            </Text>
-            <Button onAction="#handleButtonClick" id="refreshlist" fx:id="refreshlist" layoutX="777.0" layoutY="87.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" text="Refresh List" />
+            <Button id="refreshlist" fx:id="refreshlist" layoutX="777.0" layoutY="87.0" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="27.0" prefWidth="100.0" text="Refresh List" />
+            <Button id="inspectstudent" fx:id="inspectstudent" layoutX="14.0" layoutY="87.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="199.0" text="Inspect Student" onAction="#handleButtonClick" />
       </children>
     </AnchorPane>
   </children>

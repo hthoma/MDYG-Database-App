@@ -47,8 +47,9 @@ public class MainViewController implements Initializable {
 
 @FXML private Menu moreselect;
 @FXML private MenuItem helpselect;   
-@FXML private TableView StudentName;   
+@FXML private TableView<Student> StudentTable ;   
 @FXML private Button refreshlist;
+@FXML private Button inspectstudent;
 
 
       @Override
@@ -83,6 +84,11 @@ public class MainViewController implements Initializable {
         Button target  = (Button) event.getSource();
         switch(target.getId()){
             case "refreshlist":renderList();
+            break;
+            case "inspectstudent": Student astudent = StudentTable.getSelectionModel().getSelectedItem();
+            
+            System.out.println(astudent.getFName() + " selected!");
+            break;
                             
                           
         }
@@ -108,7 +114,7 @@ public class MainViewController implements Initializable {
        System.out.println(aStudent.toString());
                    
     }
-    //Make columns
+
     
     ObservableList<Student> oListStudent = FXCollections.observableArrayList(students);
     TableColumn<Student, String> FnameColumn = new TableColumn<>("First Name");
@@ -140,8 +146,9 @@ public class MainViewController implements Initializable {
         EContact.setMinWidth(210);
         EContact.setCellValueFactory(new PropertyValueFactory<>("PhoneNum"));
         
-    StudentName.setItems(oListStudent);
-    StudentName.getColumns().addAll(StudentID,FnameColumn,MnameColumn,LnameColumn,Delegation,RoomNum,EContact);
+    StudentTable.setItems(oListStudent);
+    StudentTable.getColumns().clear();
+    StudentTable.getColumns().addAll(StudentID,FnameColumn,MnameColumn,LnameColumn,Delegation,RoomNum,EContact);
     
     
     }
