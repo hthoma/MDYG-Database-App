@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
@@ -31,22 +30,15 @@
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="554.0" prefWidth="735.0" VBox.vgrow="ALWAYS">
       <children>
-            <TableView layoutX="14.0" layoutY="130.0" prefHeight="388.0" prefWidth="870.0">
-              <columns>
-                <TableColumn id="StudentName" fx:id="StudentName" prefWidth="228.0" text="Name" />
-                <TableColumn prefWidth="111.0" text="ID" />
-                  <TableColumn prefWidth="101.0" text="Role" />
-                  <TableColumn prefWidth="97.0" text="Delegation" />
-                  <TableColumn prefWidth="176.0" text="Parent's Phone" />
-                  <TableColumn prefWidth="155.0" text="Room Num" />
-              </columns>
+            <TableView id="StudentName" fx:id="StudentName" layoutX="14.0" layoutY="130.0" prefHeight="388.0" prefWidth="870.0">
+            
             </TableView>
             <Text layoutX="14.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello Montrell!">
                <font>
                   <Font size="29.0" />
                </font>
             </Text>
-            <Button layoutX="355.0" layoutY="89.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="199.0" text="Download Student List" />
+            <Button onAction="#handleButtonClick" id="refreshlist" fx:id="refreshlist" layoutX="777.0" layoutY="87.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" text="Refresh List" />
       </children>
     </AnchorPane>
   </children>

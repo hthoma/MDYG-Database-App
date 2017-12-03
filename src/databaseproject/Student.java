@@ -10,7 +10,7 @@ package databaseproject;
  * @author hthoma
  */
 public class Student {
-    String FName, Mname, Lname, SID, RNum,Delegation, PhoneNum;
+    String FName, Mname, Lname, SID, RNum, Delegation, PhoneNum;
 
     public Student(String FName, String Mname, String Lname, String SID, String RNum, String Delegation, String PhoneNum) {
         this.FName = FName;
