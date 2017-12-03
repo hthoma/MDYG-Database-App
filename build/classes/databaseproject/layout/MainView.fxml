@@ -32,7 +32,8 @@
             
             </TableView>
             <Button id="refreshlist" fx:id="refreshlist" layoutX="777.0" layoutY="87.0" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="27.0" prefWidth="100.0" text="Refresh List" />
-            <Button id="inspectstudent" fx:id="inspectstudent" layoutX="14.0" layoutY="87.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="199.0" text="Inspect Student" onAction="#handleButtonClick" />
+            <Button id="inspectstudent" fx:id="inspectstudent" layoutX="14.0" layoutY="87.0" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="27.0" prefWidth="199.0" text="Inspect Student" />
+            <Button id="addstudent" fx:id="addstudent" layoutX="777.0" layoutY="48.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" text="Add Student" onAction="#handleButtonClick" />
       </children>
     </AnchorPane>
   </children>

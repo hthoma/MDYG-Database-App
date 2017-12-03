@@ -50,7 +50,7 @@ public class MainViewController implements Initializable {
 @FXML private TableView<Student> StudentTable ;   
 @FXML private Button refreshlist;
 @FXML private Button inspectstudent;
-
+@FXML private Button addstudent;
 
       @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -100,7 +100,13 @@ public class MainViewController implements Initializable {
            }
            
             break;
-                            
+            case "addstudent":   Stage stage = new Stage();
+                             Parent root;
+                             root = FXMLLoader.load(getClass().getClassLoader().getResource("databaseproject/layout/AddStudent.fxml"));
+                             Scene scene = new Scene(root);
+                             stage.setScene(scene);
+                             stage.show();
+            break;
                           
         }
         
