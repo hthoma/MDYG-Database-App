@@ -100,7 +100,7 @@ public class MainViewController implements Initializable {
            }
            
             break;
-            case "addstudent":   Stage stage = new Stage();
+            case "addstudent":  Stage stage = new Stage();
                              Parent root;
                              root = FXMLLoader.load(getClass().getClassLoader().getResource("databaseproject/layout/AddStudent.fxml"));
                              Scene scene = new Scene(root);

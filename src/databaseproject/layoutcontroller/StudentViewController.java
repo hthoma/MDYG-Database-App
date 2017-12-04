@@ -42,7 +42,7 @@ public class StudentViewController implements Initializable {
 
   @Override
     public void initialize(URL url, ResourceBundle rb) {
-     sqlconnector sql = new sqlconnector();
+    sqlconnector sql = new sqlconnector();
     Student astudent = sql.getstudent();
             
     System.out.println(astudent.toString());

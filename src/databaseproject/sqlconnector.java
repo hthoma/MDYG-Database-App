@@ -41,9 +41,10 @@ public class sqlconnector {
         return true;
     }
     
-    public String runSQL(String sqlcommand){
-        //TODO: Create runSQL class
-        return "Not done yet";
+    public  static void runSQL(String sqlcommand) throws SQLException{
+        PreparedStatement preparedStmt = connection.prepareStatement(sqlcommand);
+        preparedStmt.execute();
+    
     }
     public static void setstudent(Student student){
         selectedstudent = student;

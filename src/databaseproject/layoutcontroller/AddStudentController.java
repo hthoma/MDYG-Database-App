@@ -8,10 +8,14 @@ package databaseproject.layoutcontroller;
 import databaseproject.sqlconnector;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
@@ -29,6 +33,7 @@ public class AddStudentController implements Initializable {
     @FXML private TextField RoomNumtb;
     @FXML private TextField phonetb;
     @FXML private TextField Delegationnumtb;
+    
   @Override
     public void initialize(URL url, ResourceBundle rb) {
         
@@ -39,13 +44,18 @@ public class AddStudentController implements Initializable {
         Button target  = (Button) event.getSource();
         switch(target.getId()){
             case "addstudent": 
-                if(FNametb.getText() == "" || MNametb.getText() == "" || LNametb.getText() == "" || RoomNumtb.getText() == "" || phonetb.getText() == "" || Delegationnumtb.getText() == "")
-                    System.out.println("Error, cannot leave a field empty");
-                else{
-                    sqlconnector sql = new sqlconnector();
-                    sql.runSQL("insert into Student values(T001," + FNametb.getText() + " , " + MNametb.getText() + " , " + LNametb.getText() + " , " + "Sophmore, 0, 2018," +  phonetb.getText() + "," + RoomNumtb.getText() + ", 001 , 001 ," + Delegationnumtb.getText() +");");
-                }
-                 
+             //   if(FNametb.getText().equals("")  || MNametb.getText().equals("") || LNametb.getText().equals("") || RoomNumtb.getText().equals("")|| phonetb.getText().equals("") || Delegationnumtb.getText().equals(""))
+                //    System.out.println("Error, cannot leave a field empty");
+                //else{
+            try {
+                sqlconnector sql = new sqlconnector();
+                sqlconnector.runSQL("insert into Student values('T001', '" + FNametb.getText() + "' , '" + MNametb.getText() + "' , '" + LNametb.getText() + "' , '" + "Sophmore', '0', '2018', '" +  phonetb.getText() + "' , '" + RoomNumtb.getText() + " ', '001' , '001' , '" + Delegationnumtb.getText() +"')");
+            } catch (SQLException ex) {
+                Logger.getLogger(AddStudentController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            ((Node)(event.getSource())).getScene().getWindow().hide();
+              
+             break;    
         }
     }
 }
