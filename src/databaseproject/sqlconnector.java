@@ -63,9 +63,14 @@ public class sqlconnector {
         
         PreparedStatement preparedStmt = connection.prepareStatement("insert into Student(StudentID, FName, MName, LName, AcademicYear, FinAid, EnrollDate, PhoneNum, RoomNum)" +  " values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
         
+        String num = Integer.toString((highestval + 1));
+        int strLength = 6;
+        String pad = "";
+        for(int i = 0; i < strLength - num.length(); i++)
+            pad += "0";
+        num = pad + num;
         
-
-        preparedStmt.setString (1, Integer.toString((highestval + 1)));
+        preparedStmt.setString (1, num);
         preparedStmt.setString (2,FName);
         preparedStmt.setString (3,MName);
         preparedStmt.setString (4,LName);
