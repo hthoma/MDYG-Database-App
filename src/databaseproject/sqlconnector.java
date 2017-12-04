@@ -6,6 +6,7 @@
 package databaseproject;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -41,10 +42,43 @@ public class sqlconnector {
         return true;
     }
     
-    public  static void runSQL(String sqlcommand) throws SQLException{
-        PreparedStatement preparedStmt = connection.prepareStatement(sqlcommand);
+    public  static void addStudent(String FName, String MName, String LName, String Year,String PhoneNum, String RoomNum) throws SQLException{
+           String querys= "SELECT * FROM mjubil1db.Student;";
+            Statement queryStatement = connection.createStatement();
+            ResultSet results = queryStatement.executeQuery(querys);
+            int highestval = 0 ;
+            int highestvalpay = 0;
+            while(results.next())
+            {
+                Student astudent;
+                  int val = Integer.parseInt(results.getString("StudentID"));
+                  //int val2 = Integer.parseInt(results.getString("PayID"));
+                  if (val > highestval)
+                      highestval = val;
+                  //if (val2 > highestvalpay)
+                   //   highestvalpay = val;
+            }   
+
+        
+        
+        PreparedStatement preparedStmt = connection.prepareStatement("insert into Student(StudentID, FName, MName, LName, AcademicYear, FinAid, EnrollDate, PhoneNum, RoomNum)" +  " values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        
+        
+
+        preparedStmt.setString (1, Integer.toString((highestval + 1)));
+        preparedStmt.setString (2,FName);
+        preparedStmt.setString (3,MName);
+        preparedStmt.setString (4,LName);
+        preparedStmt.setString (5,Year);
+        preparedStmt.setInt (6,0);
+        java.sql.Date date = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+        preparedStmt.setDate(7, date);
+        preparedStmt.setString (8,PhoneNum);
+        preparedStmt.setString (9,RoomNum);
         preparedStmt.execute();
-    
+        System.out.println("Added student " + FName);
+        
+        
     }
     public static void setstudent(Student student){
         selectedstudent = student;

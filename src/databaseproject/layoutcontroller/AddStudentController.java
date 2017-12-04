@@ -24,15 +24,15 @@ import javafx.scene.control.TextField;
  * @author hthoma
  */
 public class AddStudentController implements Initializable {
-    
+    String FName,MName,LName,RoomNum,Phone;
     
     @FXML private Button addstudent;
     @FXML private TextField FNametb;
     @FXML private TextField LNametb;
     @FXML private TextField MNametb;
     @FXML private TextField RoomNumtb;
-    @FXML private TextField phonetb;
-    @FXML private TextField Delegationnumtb;
+    @FXML private TextField PhoneNumtb;
+    @FXML private TextField DelegationNumtb;
     
   @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -49,7 +49,13 @@ public class AddStudentController implements Initializable {
                 //else{
             try {
                 sqlconnector sql = new sqlconnector();
-                sqlconnector.runSQL("insert into Student values('T001', '" + FNametb.getText() + "' , '" + MNametb.getText() + "' , '" + LNametb.getText() + "' , '" + "Sophmore', '0', '2018', '" +  phonetb.getText() + "' , '" + RoomNumtb.getText() + " ', '001' , '001' , '" + Delegationnumtb.getText() +"')");
+                FName = FNametb.getText();
+                MName = MNametb.getText();
+                LName = LNametb.getText();
+                Phone = PhoneNumtb.getText();
+                RoomNum = RoomNumtb.getText();
+                System.out.println(FName + MName + LName + Phone + RoomNum);
+                sql.addStudent(FName, MName, LName, "Sophmore" ,Phone, RoomNum);
             } catch (SQLException ex) {
                 Logger.getLogger(AddStudentController.class.getName()).log(Level.SEVERE, null, ex);
             }
