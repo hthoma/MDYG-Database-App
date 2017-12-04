@@ -55,7 +55,7 @@ public class AddStudentController implements Initializable {
                 Phone = PhoneNumtb.getText();
                 RoomNum = RoomNumtb.getText();
                 System.out.println(FName + MName + LName + Phone + RoomNum);
-                sql.addStudent(FName, MName, LName, "Sophmore" ,Phone, RoomNum);
+                sql.addStudent(FName, MName, LName, "Sophmore" ,Phone, RoomNum, "DELEGATION ");
             } catch (SQLException ex) {
                 Logger.getLogger(AddStudentController.class.getName()).log(Level.SEVERE, null, ex);
             }

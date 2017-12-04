@@ -42,12 +42,13 @@ public class sqlconnector {
         return true;
     }
     
-    public  static void addStudent(String FName, String MName, String LName, String Year,String PhoneNum, String RoomNum) throws SQLException{
+    public  static void addStudent(String FName, String MName, String LName, String Year,String PhoneNum, String RoomNum, String DName) throws SQLException{
            String querys= "SELECT * FROM mjubil1db.Student;";
             Statement queryStatement = connection.createStatement();
             ResultSet results = queryStatement.executeQuery(querys);
             int highestval = 0 ;
             int highestvalpay = 0;
+            String delegation;
             while(results.next())
             {
                 Student astudent;
@@ -60,8 +61,21 @@ public class sqlconnector {
             }   
 
         
+  
+            querys= "Select DellID from Delegation where DName= ' " + DName + " ';";
+            queryStatement = connection.createStatement();
+            results = queryStatement.executeQuery(querys);
+            
+            while(results.next())
+            {
+                
+                  delegation = results.getString("DellID");
+                 
+                  
+            }   
+
         
-        PreparedStatement preparedStmt = connection.prepareStatement("insert into Student(StudentID, FName, MName, LName, AcademicYear, FinAid, EnrollDate, PhoneNum, RoomNum)" +  " values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        PreparedStatement preparedStmt = connection.prepareStatement("insert into Student(StudentID, FName, MName, LName, AcademicYear, FinAid, EnrollDate, PhoneNum, RoomNum, DelegID)" +  " values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         
         
 
@@ -75,6 +89,7 @@ public class sqlconnector {
         preparedStmt.setDate(7, date);
         preparedStmt.setString (8,PhoneNum);
         preparedStmt.setString (9,RoomNum);
+        preparedStmt.setString (10,"101");
         preparedStmt.execute();
         System.out.println("Added student " + FName);
         
