@@ -28,6 +28,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
@@ -57,11 +58,11 @@ public class MainViewController implements Initializable {
 @FXML private TextField Nametb;
 @FXML private TextField PhoneNumtb;
 @FXML private TextField RoomNumtb;
-@FXML private TextField BillNumtb;
+@FXML private TextField Roleet;
 @FXML private TextField SIDtb;
 @FXML private Button searchstudent;
 @FXML private MenuItem quitbutton;
-
+@FXML private CheckBox checkbox;
       @Override
     public void initialize(URL url, ResourceBundle rb) {
       renderList();
@@ -82,7 +83,7 @@ public class MainViewController implements Initializable {
                              Scene scene = new Scene(root);
                              stage.setScene(scene);
                              stage.show();
-                             ((Node)(event.getSource())).getScene().getWindow().hide();
+                            
                          break; 
             case "showstaff": renderStaff();
             break;
@@ -123,7 +124,7 @@ public class MainViewController implements Initializable {
             break;
             case "searchstudent":  
                  sqlconnector sql = new sqlconnector();
-                 ArrayList<Student> searchedstudents = sql.searchStudent(Nametb.getText(),RoomNumtb.getText(),PhoneNumtb.getText(),SIDtb.getText());
+                 ArrayList<Student> searchedstudents = sql.searchStudent(Nametb.getText(),RoomNumtb.getText(),PhoneNumtb.getText(),SIDtb.getText(),Roleet.getText(),checkbox.isSelected());
                   ObservableList<Student> oListStudent = FXCollections.observableArrayList(searchedstudents);
                    TableColumn<Student, String> FnameColumn = new TableColumn<>("First Name");
         FnameColumn.setMinWidth(120);

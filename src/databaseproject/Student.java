@@ -71,8 +71,10 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" + "FName=" + FName + ", Mname=" + Mname + ", Lname=" + Lname + ", SID=" + SID + ", RNum=" + RNum + ", Delegation=" + Delegation + ", PhoneNum=" + PhoneNum + '}';
+        return "Student{" + "FName=" + FName + ", Mname=" + Mname + ", Lname=" + Lname + ", SID=" + SID + ", RNum=" + RNum + ", Delegation=" + Delegation + ", PhoneNum=" + PhoneNum + ", Role=" + Role + ", DName=" + DName + ", Adv1=" + Adv1 + ", Adv2=" + Adv2 + ", PaidUp=" + PaidUp + '}';
     }
+
+    
 
     public Student(String FName, String Lname) {
         this.FName = FName;

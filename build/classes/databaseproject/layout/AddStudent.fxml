@@ -20,7 +20,7 @@
             <TextField id="MNametb" fx:id="MNametb" layoutX="160.0" layoutY="67.0" prefHeight="27.0" prefWidth="149.0" />
             <TextField id="LNametb" fx:id="LNametb" layoutX="161.0" layoutY="105.0" prefHeight="27.0" prefWidth="149.0" />
             <TextField id="RoomNumtb" fx:id="RoomNumtb" layoutX="158.0" layoutY="141.0" prefHeight="27.0" prefWidth="150.0" />
-            <TextField id="DelegationNumtb" fx:id="DelegationNumtb" layoutX="158.0" layoutY="177.0" prefHeight="27.0" prefWidth="150.0" />
+            <TextField id="Delegation" fx:id="Delegation" layoutX="158.0" layoutY="177.0" prefHeight="27.0" prefWidth="150.0" />
             <TextField id="PhoneNumtb" fx:id="PhoneNumtb" layoutX="156.0" layoutY="215.0" prefHeight="27.0" prefWidth="150.0" />
             <Button id="addstudent" fx:id="addstudent" layoutX="95.0" layoutY="268.0" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="27.0" prefWidth="132.0" text="Create Student" />
       </children>

@@ -63,7 +63,7 @@ public class sqlconnector {
         return true;
     }
     
-    public ArrayList<Student> searchStudent(String Name,String RoomNum,String PhoneNum,String ID) throws SQLException{
+    public ArrayList<Student> searchStudent(String Name,String RoomNum,String PhoneNum,String ID,String Role, Boolean Paid) throws SQLException{
         ArrayList<Student> students;
         students = downloadStudents();
         
@@ -103,6 +103,23 @@ public class sqlconnector {
             iter.remove();
 }
         }
+          if(!Role.isEmpty()){
+           Iterator<Student> iter = students.iterator();
+           while (iter.hasNext()) {
+            Student checkstudent = iter.next();
+        if (!(checkstudent.getRole()).contains(Role))
+            iter.remove();
+}
+        }
+          
+           
+           Iterator<Student> iter = students.iterator();
+           while (iter.hasNext()) {
+            Student checkstudent = iter.next();
+        if (!(checkstudent.getPaidUp() == Paid))
+            iter.remove();
+}
+        
         
         return students;
         
@@ -133,7 +150,7 @@ public class sqlconnector {
   
          
         
-        PreparedStatement preparedStmt = connection.prepareStatement("insert into Student(StudentID, FName, MName, LName, AcademicYear, FinAid, EnrollDate, PhoneNum, RoomNum, DelegID)" +  " values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        PreparedStatement preparedStmt = connection.prepareStatement("insert into Student(StudentID, FName, MName, LName, AcademicYear, FinAid, EnrollDate, PhoneNum, RoomNum, DelegID, PayID)" +  " values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
          String num = Integer.toString((highestval + 1));
         int strLength = 6;
         String pad = "";
@@ -154,7 +171,13 @@ public class sqlconnector {
         preparedStmt.setString (8,PhoneNum);
         preparedStmt.setString (9,RoomNum);
         preparedStmt.setString (10,DName);
+        preparedStmt.setString (10,"1112");
         preparedStmt.execute();
+        
+        PreparedStatement preparedStmt2 = connection.prepareStatement("insert into Role(StudID,Role)" +  " values (?, ?)");
+        preparedStmt2.setString (1, num);
+        preparedStmt2.setString (2, "Delegate");
+        preparedStmt2.execute();
         System.out.println("Added student " + FName);
         
         
@@ -187,30 +210,28 @@ public class sqlconnector {
                    
             
             
-    /*        Statement queryStatement3 = connection.createStatement();
-                    String querys3= "select * " +
-                               "from Student, Paymentplan " +
-                        "where Student.PayID = Paymentplan.PayID " +
-                            "and StudentID = '" + astudent.getSID() +             
-                            "';";
+                Statement queryStatement3 = connection.createStatement();
+                    String querys3= "select * from Student, Paymentplan where Student.PayID = Paymentplan.PayID and StudentID = '" + astudent.getSID() + "';";
+                    
                     resultsDeleg = queryStatement3.executeQuery(querys3);
                     resultsDeleg.next();
-                    BigDecimal amountdue = resultsDeleg.getBigDecimal("Amtdue");
+                    String amountdue = resultsDeleg.getString("AmtDue");
                     amountdue.toString();
-                    if (amountdue.toString().equals(0))
+                    if (amountdue.equals("0.00") )
                     astudent.setPaidUp(true);
                     else
                     astudent.setPaidUp(false);
                     
-              */
-                     Statement queryStatement4 = connection.createStatement();
-                    String querys4= "select *" +
-                                     "from Student, Role " +
-                                    "where Student.StudentID = Role.StudID " +
-                                    "and StudID = '" + astudent.getSID() + "';";
-                    resultsDeleg = queryStatement4.executeQuery(querys4);
-                    resultsDeleg.next();
-                    astudent.setRole(resultsDeleg.getString("Role"));   
+              
+    
+                     Statement queryStatement6 = connection.createStatement();
+                     String querys6= "select Role from Student, Role  where Student.StudentID = Role.StudID and StudID = '" + astudent.getSID() + "';";
+         
+                    
+                    ResultSet resultsRole = queryStatement6.executeQuery(querys6);
+                    
+                    resultsRole.next();
+                    astudent.setRole(resultsRole.getString("Role"));   
 
                   
                   Statement queryStatement5 = connection.createStatement();
@@ -230,7 +251,18 @@ public class sqlconnector {
         
     }
 
-    
+    public void changeRoom(String SID,String RoomNum) throws SQLException{
+        String query = "update Student set RoomNum = ? where StudentID = ?";
+        PreparedStatement preparedStmt = connection.prepareStatement(query);
+        System.out.println("ROOMNUM" + RoomNum);
+        preparedStmt.setString(1,RoomNum);
+        preparedStmt.setString(2,SID);
+        preparedStmt.execute();
+        System.out.println("changeroom complete");
+
+
+        
+    }
 
       
 }
