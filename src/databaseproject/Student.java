@@ -10,8 +10,24 @@ package databaseproject;
  * @author hthoma
  */
 public class Student {
-    String FName, Mname, Lname, SID, RNum, Delegation, PhoneNum, Role, DName;
+    String FName, Mname, Lname, SID, RNum, Delegation, PhoneNum, Role, DName, Adv1, Adv2;
     Boolean PaidUp;
+
+    public String getAdv1() {
+        return Adv1;
+    }
+
+    public void setAdv1(String Adv1) {
+        this.Adv1 = Adv1;
+    }
+
+    public String getAdv2() {
+        return Adv2;
+    }
+
+    public void setAdv2(String Adv2) {
+        this.Adv2 = Adv2;
+    }
 
     public String getDName() {
         return DName;

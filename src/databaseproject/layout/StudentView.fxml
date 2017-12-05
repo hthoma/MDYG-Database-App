@@ -32,7 +32,9 @@
                   <Font size="25.0" />
                </font></Text>
             <Button id="ChangeRoom" fx:id="ChangeRoom" layoutX="374.0" layoutY="281.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="118.0" text="Change Room" />
-            <Button id="ViewAdvisors" fx:id="ViewAdvisors" layoutX="242.0" layoutY="281.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="118.0" text="View Advisors" />
+            <Text layoutX="329.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Advisor(s):" />
+            <Text id="adv1" fx:id="adv1" layoutX="293.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="138.21875" />
+            <Text id="adv2" fx:id="adv2" layoutX="293.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="138.2187571004033" />
       </children>
     </AnchorPane>
   </children>

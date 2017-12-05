@@ -140,7 +140,7 @@ public class MainViewController implements Initializable {
        //TODO: Make display delegation name, not number.
     TableColumn<Student, String> Delegation = new TableColumn<>("Delegation");
         Delegation.setMinWidth(120);
-        Delegation.setCellValueFactory(new PropertyValueFactory<>("Delegation"));
+        Delegation.setCellValueFactory(new PropertyValueFactory<>("DName"));
         
     TableColumn<Student, String> RoomNum = new TableColumn<>("Room #");
         RoomNum.setMinWidth(60);
@@ -169,7 +169,10 @@ public class MainViewController implements Initializable {
         Logger.getLogger(MainViewController.class.getName()).log(Level.SEVERE, null, ex);
     }
           ObservableList<Staff> oListStaff = FXCollections.observableArrayList(staff);
-          TableColumn<Staff, String> StaffID = new TableColumn<>("Staff ID");
+        TableColumn<Staff, String> StaffName = new TableColumn<>("Name");
+        StaffName.setMinWidth(60);
+        StaffName.setCellValueFactory(new PropertyValueFactory<>("Name"));
+        TableColumn<Staff, String> StaffID = new TableColumn<>("Staff ID");
         StaffID.setMinWidth(120);
         StaffID.setCellValueFactory(new PropertyValueFactory<>("ID"));
         TableColumn<Staff, String> RoomNum = new TableColumn<>("Room #");
@@ -177,7 +180,7 @@ public class MainViewController implements Initializable {
         RoomNum.setCellValueFactory(new PropertyValueFactory<>("RoomNum"));
         StudentTable.setItems(oListStaff);
     StudentTable.getColumns().clear();
-    StudentTable.getColumns().addAll(StaffID,RoomNum);
+    StudentTable.getColumns().addAll(StaffName,StaffID,RoomNum);
         
     }
     
@@ -220,7 +223,7 @@ public class MainViewController implements Initializable {
        //TODO: Make display delegation name, not number.
     TableColumn<Student, String> Delegation = new TableColumn<>("Delegation");
         Delegation.setMinWidth(120);
-        Delegation.setCellValueFactory(new PropertyValueFactory<>("Delegation"));
+        Delegation.setCellValueFactory(new PropertyValueFactory<>("DName"));
         
     TableColumn<Student, String> RoomNum = new TableColumn<>("Room #");
         RoomNum.setMinWidth(60);

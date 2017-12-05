@@ -5,10 +5,13 @@
  */
 package databaseproject.layoutcontroller;
 
+import databaseproject.Student;
 import databaseproject.sqlconnector;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -55,10 +58,20 @@ public class AddStudentController implements Initializable {
                 Phone = PhoneNumtb.getText();
                 RoomNum = RoomNumtb.getText();
                 Delegation = DelegationNumtb.getText();
-                
+                ArrayList<Student> students = sql.downloadStudents();
+                Iterator<Student> iter = students.iterator();
+                while (iter.hasNext()) {
+                 Student checkstudent = iter.next();
+                 if (checkstudent.getDName().contains(Delegation))
+                   Delegation = checkstudent.getDelegation();
+                 else
+                     Delegation = "101";
+}
+        
                 System.out.println(FName + MName + LName + Phone + RoomNum);
                 sql.addStudent(FName, MName, LName, "Freshman" ,Phone, RoomNum, Delegation);
-            } catch (SQLException ex) {
+            }
+            catch (SQLException ex) {
                 Logger.getLogger(AddStudentController.class.getName()).log(Level.SEVERE, null, ex);
             }
             ((Node)(event.getSource())).getScene().getWindow().hide();

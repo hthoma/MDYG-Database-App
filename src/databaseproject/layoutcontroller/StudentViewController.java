@@ -35,8 +35,8 @@ public class StudentViewController implements Initializable {
       @FXML private Text Comitteete;
       @FXML private Text HouseSenatete;
       @FXML private Text ComitteeStatuste;
-      
-      
+      @FXML private Text adv1;
+      @FXML private Text adv2;
       
       
 
@@ -52,7 +52,8 @@ public class StudentViewController implements Initializable {
     PhoneNumte.setText(astudent.getPhoneNum());
     DelegationNumte.setText(astudent.getDelegation());
     Delegationte.setText(astudent.getDName());
-    
+    adv1.setText(astudent.getAdv1());
+    adv2.setText(astudent.getAdv2());
           System.out.println(astudent.toString());
     }  
 }

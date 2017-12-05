@@ -10,11 +10,20 @@ package databaseproject;
  * @author hthoma
  */
 public class Staff {
-    String RoomNum,ID;
+    String RoomNum,ID,Name;
 
-    public Staff(String RoomNum, String ID) {
+    public Staff(String ID, String RoomNum,String Name) {
         this.RoomNum = RoomNum;
         this.ID = ID;
+        this.Name = Name;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String Name) {
+        this.Name = Name;
     }
 
     public String getRoomNum() {

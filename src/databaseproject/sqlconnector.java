@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package databaseproject;
+import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -47,7 +48,7 @@ public class sqlconnector {
               
             
                 Staff astaff;
-                astaff = new Staff(results.getString("StaffID"),results.getString("RoomNum"));
+                astaff = new Staff(results.getString("StaffID"),results.getString("RoomNum"),results.getString("FName")+ " " +results.getString("LName"));
                     staff.add(astaff);
                     
                     }
@@ -177,27 +178,28 @@ public class sqlconnector {
                 Student astudent;
             astudent = new Student(results.getString("FName"),results.getString("MName"),results.getString("LName"),results.getString("StudentID"), results.getString("RoomNum"), results.getString("DelegID"), results.getString("PhoneNum"));
                 
-
+/*
              Statement queryStatement2 = connection.createStatement();
                     String querys2= "Select * from Delegation where DelID = '" + astudent.getDelegation() + "';";
                     ResultSet resultsDeleg = queryStatement2.executeQuery(querys2);
                     resultsDeleg.next();
                    astudent.setDName(resultsDeleg.getString("DName"));
-                  /*   Statement queryStatement3 = connection.createStatement();
-                    String querys3= "select Paymentplan.Amtdue " +
-                               "from mjubil1db.Student, mjubil1db.Paymentplan " +
+                    Statement queryStatement3 = connection.createStatement();
+                    String querys3= "select * " +
+                               "from Student, Paymentplan " +
                         "where Student.PayID = Paymentplan.PayID " +
                             "and StudentID = '" + astudent.getSID() +             
                             "';";
                     resultsDeleg = queryStatement3.executeQuery(querys3);
                     resultsDeleg.next();
-                    int amountdue = resultsDeleg.getInt("Amtdue");
-                    if (amountdue == 0)
+                    BigDecimal amountdue = resultsDeleg.getBigDecimal("Amtdue");
+                    amountdue.toString();
+                    if (amountdue.toString().equals(0))
                     astudent.setPaidUp(true);
                     else
                     astudent.setPaidUp(false);
                     
-                 
+              
                      Statement queryStatement4 = connection.createStatement();
                     String querys4= "select FName, LName, Role" +
                                      "from Student, Role " +
@@ -207,6 +209,17 @@ public class sqlconnector {
                     resultsDeleg.next();
                     astudent.setRole(resultsDeleg.getString("Role"));   
 */
+                  
+                  Statement queryStatement5 = connection.createStatement();
+                    String querys5= "select *" +
+                                     "from Delegation, Advisor  " +
+                                    "where Delegation.AdvID = Advisor.AdvisorID " +
+                                    "and Delegation.DelID = '" + astudent.getDelegation() + "';";
+                    resultsDeleg = queryStatement5.executeQuery(querys5);
+                    resultsDeleg.next();
+                    astudent.setAdv1(resultsDeleg.getString("FName") + " " + resultsDeleg.getString("LName")); 
+                    if (resultsDeleg.next())
+                     astudent.setAdv2(resultsDeleg.getString("FName") + " " + resultsDeleg.getString("LName"));   
             students.add(astudent);
             }   
            
