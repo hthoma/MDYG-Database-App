@@ -8,6 +8,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Iterator;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -73,7 +74,7 @@ public class sqlconnector {
 }
         }
                  
-                                if(!BillNum.isEmpty()){
+           if(!BillNum.isEmpty()){
            Iterator<Student> iter = students.iterator();
            while (iter.hasNext()) {
             Student checkstudent = iter.next();
@@ -101,33 +102,27 @@ public class sqlconnector {
             {
                 Student astudent;
                   int val = Integer.parseInt(results.getString("StudentID"));
-                  //int val2 = Integer.parseInt(results.getString("PayID"));
+                  
                   if (val > highestval)
                       highestval = val;
-                  //if (val2 > highestvalpay)
-                   //   highestvalpay = val;
-            }   
-
-        
-  
-         //   querys= "Select DellID from Delegation where DName= ' " + DName + " ';";
-         //   queryStatement = connection.createStatement();
-         //   results = queryStatement.executeQuery(querys);
-            
-            while(results.next())
-            {
-                
-                  delegation = results.getString("DellID");
-                 
                   
             }   
 
         
-        PreparedStatement preparedStmt = connection.prepareStatement("insert into Student(StudentID, FName, MName, LName, AcademicYear, FinAid, EnrollDate, PhoneNum, RoomNum, DelegID)" +  " values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+  
+         
         
+        PreparedStatement preparedStmt = connection.prepareStatement("insert into Student(StudentID, FName, MName, LName, AcademicYear, FinAid, EnrollDate, PhoneNum, RoomNum, DelegID)" +  " values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+         String num = Integer.toString((highestval + 1));
+        int strLength = 6;
+        String pad = "";
+        for(int i = 0; i < strLength - num.length(); i++)
+            pad += "0";
+        num = pad + num;
+
         
 
-        preparedStmt.setString (1, Integer.toString((highestval + 1)));
+        preparedStmt.setString (1, num);
         preparedStmt.setString (2,FName);
         preparedStmt.setString (3,MName);
         preparedStmt.setString (4,LName);
@@ -137,7 +132,7 @@ public class sqlconnector {
         preparedStmt.setDate(7, date);
         preparedStmt.setString (8,PhoneNum);
         preparedStmt.setString (9,RoomNum);
-        preparedStmt.setString (10,"101");
+        preparedStmt.setString (10,DName);
         preparedStmt.execute();
         System.out.println("Added student " + FName);
         
@@ -168,7 +163,30 @@ public class sqlconnector {
                     ResultSet resultsDeleg = queryStatement2.executeQuery(querys2);
                     resultsDeleg.next();
                    astudent.setDName(resultsDeleg.getString("DName"));
-                   System.out.println(" Set delegation Name" + resultsDeleg.getString(1) );
+                  /*   Statement queryStatement3 = connection.createStatement();
+                    String querys3= "select Paymentplan.Amtdue " +
+                               "from mjubil1db.Student, mjubil1db.Paymentplan " +
+                        "where Student.PayID = Paymentplan.PayID " +
+                            "and StudentID = '" + astudent.getSID() +             
+                            "';";
+                    resultsDeleg = queryStatement3.executeQuery(querys3);
+                    resultsDeleg.next();
+                    int amountdue = resultsDeleg.getInt("Amtdue");
+                    if (amountdue == 0)
+                    astudent.setPaidUp(true);
+                    else
+                    astudent.setPaidUp(false);
+                    
+                 
+                     Statement queryStatement4 = connection.createStatement();
+                    String querys4= "select FName, LName, Role" +
+                                     "from Student, Role " +
+                                    "where Student.StudentID = Role.StudID " +
+                                    "and Student.StudentID = '" + astudent.getSID() + "';";
+                    resultsDeleg = queryStatement4.executeQuery(querys4);
+                    resultsDeleg.next();
+                    astudent.setRole(resultsDeleg.getString("Role"));   
+*/
             students.add(astudent);
             }   
            

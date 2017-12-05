@@ -24,7 +24,7 @@ import javafx.scene.control.TextField;
  * @author hthoma
  */
 public class AddStudentController implements Initializable {
-    String FName,MName,LName,RoomNum,Phone;
+    String FName,MName,LName,RoomNum,Phone,Delegation;
     
     @FXML private Button addstudent;
     @FXML private TextField FNametb;
@@ -54,8 +54,10 @@ public class AddStudentController implements Initializable {
                 LName = LNametb.getText();
                 Phone = PhoneNumtb.getText();
                 RoomNum = RoomNumtb.getText();
+                Delegation = DelegationNumtb.getText();
+                
                 System.out.println(FName + MName + LName + Phone + RoomNum);
-                sql.addStudent(FName, MName, LName, "Sophmore" ,Phone, RoomNum, "DELEGATION ");
+                sql.addStudent(FName, MName, LName, "Freshman" ,Phone, RoomNum, Delegation);
             } catch (SQLException ex) {
                 Logger.getLogger(AddStudentController.class.getName()).log(Level.SEVERE, null, ex);
             }

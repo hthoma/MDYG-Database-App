@@ -51,6 +51,7 @@ public class StudentViewController implements Initializable {
     RoomNumte.setText(astudent.getRNum());
     PhoneNumte.setText(astudent.getPhoneNum());
     DelegationNumte.setText(astudent.getDelegation());
+    Delegationte.setText(astudent.getDName());
     
           System.out.println(astudent.toString());
     }  
