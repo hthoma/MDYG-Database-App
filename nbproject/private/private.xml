@@ -3,20 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/hthoma/Desktop/MDYGApp/src/databaseproject/sqlconnector.java</file>
-            <file>file:/Users/hthoma/Desktop/MDYGApp/src/databaseproject/layout/AddStudent.fxml</file>
-            <file>file:/Users/hthoma/Desktop/MDYGApp/src/databaseproject/layoutcontroller/AddStudentController.java</file>
-            <file>file:/Users/hthoma/Desktop/MDYGApp/src/databaseproject/DatabaseProject.java</file>
-            <file>file:/Users/hthoma/Desktop/MDYGApp/src/databaseproject/layoutcontroller/MainViewController.java</file>
-            <file>file:/Users/hthoma/Desktop/MDYGApp/nbproject/jfx-impl.xml</file>
-            <file>file:/Users/hthoma/Desktop/MDYGApp/nbproject/build-impl.xml</file>
-            <file>file:/Users/hthoma/Desktop/MDYGApp/src/databaseproject/layout/MainView.fxml</file>
-            <file>file:/Users/hthoma/Desktop/MDYGApp/src/databaseproject/layout/StudentView.fxml</file>
-            <file>file:/Users/hthoma/Desktop/MDYGApp/src/databaseproject/layout/Login.fxml</file>
-            <file>file:/Users/hthoma/Desktop/MDYGApp/src/databaseproject/Student.java</file>
-            <file>file:/Users/hthoma/Desktop/MDYGApp/src/databaseproject/layout/HelpInfo.fxml</file>
-            <file>file:/Users/hthoma/Desktop/MDYGApp/src/databaseproject/layoutcontroller/StudentViewController.java</file>
-            <file>file:/Users/hthoma/Desktop/MDYGApp/src/databaseproject/layoutcontroller/LoginController.java</file>
+            <file>file:/C:/Users/still/Coding/Java/Git/MDYG-Database-App/src/databaseproject/Student.java</file>
+            <file>file:/C:/Users/still/Coding/Java/Git/MDYG-Database-App/src/databaseproject/layoutcontroller/LoginController.java</file>
+            <file>file:/C:/Users/still/Coding/Java/Git/MDYG-Database-App/src/databaseproject/layoutcontroller/AddStudentController.java</file>
+            <file>file:/C:/Users/still/Coding/Java/Git/MDYG-Database-App/src/databaseproject/DatabaseProject.java</file>
+            <file>file:/C:/Users/still/Coding/Java/Git/MDYG-Database-App/src/databaseproject/Staff.java</file>
+            <file>file:/C:/Users/still/Coding/Java/Git/MDYG-Database-App/src/databaseproject/sqlconnector.java</file>
+            <file>file:/C:/Users/still/Coding/Java/Git/MDYG-Database-App/src/databaseproject/layoutcontroller/StudentViewController.java</file>
+            <file>file:/C:/Users/still/Coding/Java/Git/MDYG-Database-App/src/databaseproject/layoutcontroller/MainViewController.java</file>
         </group>
     </open-files>
 </project-private>
