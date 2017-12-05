@@ -43,7 +43,7 @@ public class sqlconnector {
         return true;
     }
     
-    public ArrayList<Student> searchStudent(String Name,String RoomNum,String BillNum,String DelegationName) throws SQLException{
+    public ArrayList<Student> searchStudent(String Name,String RoomNum,String BillNum,String PhoneNum) throws SQLException{
         ArrayList<Student> students;
         students = downloadStudents();
         
@@ -52,6 +52,32 @@ public class sqlconnector {
            while (iter.hasNext()) {
             Student checkstudent = iter.next();
         if (!(checkstudent.getFName() +  " " + checkstudent.getMname()+ " " + checkstudent.getLname()).contains(Name))
+            iter.remove();
+}
+        }
+        
+           if(!PhoneNum.isEmpty()){
+           Iterator<Student> iter = students.iterator();
+           while (iter.hasNext()) {
+            Student checkstudent = iter.next();
+        if (!(checkstudent.getPhoneNum()).contains(PhoneNum))
+            iter.remove();
+}
+        }
+                 if(!RoomNum.isEmpty()){
+           Iterator<Student> iter = students.iterator();
+           while (iter.hasNext()) {
+            Student checkstudent = iter.next();
+        if (!(checkstudent.getRNum()).contains(RoomNum))
+            iter.remove();
+}
+        }
+                 
+                                if(!BillNum.isEmpty()){
+           Iterator<Student> iter = students.iterator();
+           while (iter.hasNext()) {
+            Student checkstudent = iter.next();
+        if (!(checkstudent.getRNum()).contains(BillNum))//Not implemented yet!
             iter.remove();
 }
         }
@@ -84,9 +110,9 @@ public class sqlconnector {
 
         
   
-            querys= "Select DellID from Delegation where DName= ' " + DName + " ';";
-            queryStatement = connection.createStatement();
-            results = queryStatement.executeQuery(querys);
+         //   querys= "Select DellID from Delegation where DName= ' " + DName + " ';";
+         //   queryStatement = connection.createStatement();
+         //   results = queryStatement.executeQuery(querys);
             
             while(results.next())
             {
