@@ -7,6 +7,7 @@ package databaseproject;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -41,6 +42,27 @@ public class sqlconnector {
         connection = DriverManager.getConnection("jdbc:mysql://triton.towson.edu:3360/mjubil1db", username, password);
         return true;
     }
+    
+    public ArrayList<Student> searchStudent(String Name,String RoomNum,String BillNum,String DelegationName) throws SQLException{
+        ArrayList<Student> students;
+        students = downloadStudents();
+        
+        if(!Name.isEmpty()){
+           Iterator<Student> iter = students.iterator();
+           while (iter.hasNext()) {
+            Student checkstudent = iter.next();
+        if (!(checkstudent.getFName() +  " " + checkstudent.getMname()+ " " + checkstudent.getLname()).contains(Name))
+            iter.remove();
+}
+        }
+        
+        return students;
+        
+   
+    }
+    
+    
+    
     
     public  static void addStudent(String FName, String MName, String LName, String Year,String PhoneNum, String RoomNum, String DName) throws SQLException{
            String querys= "SELECT * FROM mjubil1db.Student;";

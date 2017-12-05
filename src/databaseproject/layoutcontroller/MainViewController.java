@@ -31,6 +31,7 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -51,7 +52,8 @@ public class MainViewController implements Initializable {
 @FXML private Button refreshlist;
 @FXML private Button inspectstudent;
 @FXML private Button addstudent;
-
+@FXML private TextField Nametb;
+@FXML private Button searchstudent;
       @Override
     public void initialize(URL url, ResourceBundle rb) {
       renderList();
@@ -79,7 +81,7 @@ public class MainViewController implements Initializable {
     }   
     
      @FXML
-    private void handleButtonClick(ActionEvent event) throws InterruptedException, IOException{
+    private void handleButtonClick(ActionEvent event) throws InterruptedException, IOException, SQLException{
      
         Button target  = (Button) event.getSource();
         switch(target.getId()){
@@ -107,7 +109,42 @@ public class MainViewController implements Initializable {
                              stage.setScene(scene);
                              stage.show();
             break;
-                          
+            case "searchstudent":  
+                 sqlconnector sql = new sqlconnector();
+                 ArrayList<Student> searchedstudents = sql.searchStudent(Nametb.getText(),"", "", "");
+                  ObservableList<Student> oListStudent = FXCollections.observableArrayList(searchedstudents);
+                   TableColumn<Student, String> FnameColumn = new TableColumn<>("First Name");
+        FnameColumn.setMinWidth(120);
+        FnameColumn.setCellValueFactory(new PropertyValueFactory<>("FName"));
+        
+ 
+    TableColumn<Student, String> MnameColumn = new TableColumn<>("Middle Name");
+        MnameColumn.setMinWidth(120);
+        MnameColumn.setCellValueFactory(new PropertyValueFactory<>("Mname"));
+        
+    TableColumn<Student, String> LnameColumn = new TableColumn<>("Last Name");
+        LnameColumn.setMinWidth(120);
+        LnameColumn.setCellValueFactory(new PropertyValueFactory<>("Lname"));
+       
+    TableColumn<Student, String> StudentID = new TableColumn<>("SID");
+        StudentID.setMinWidth(100);
+        StudentID.setCellValueFactory(new PropertyValueFactory<>("SID"));
+       //TODO: Make display delegation name, not number.
+    TableColumn<Student, String> Delegation = new TableColumn<>("Delegation");
+        Delegation.setMinWidth(120);
+        Delegation.setCellValueFactory(new PropertyValueFactory<>("Delegation"));
+        
+    TableColumn<Student, String> RoomNum = new TableColumn<>("Room #");
+        RoomNum.setMinWidth(60);
+        RoomNum.setCellValueFactory(new PropertyValueFactory<>("RNum"));
+        
+    TableColumn<Student, String> EContact = new TableColumn<>("Emergency Contact");
+        EContact.setMinWidth(210);
+        EContact.setCellValueFactory(new PropertyValueFactory<>("PhoneNum"));
+                  StudentTable.setItems(oListStudent);
+                   StudentTable.getColumns().clear();
+                   StudentTable.getColumns().addAll(StudentID,FnameColumn,MnameColumn,LnameColumn,Delegation,RoomNum,EContact);
+    
         }
         
     }   
