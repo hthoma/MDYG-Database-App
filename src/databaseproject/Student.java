@@ -1,47 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package databaseproject;
 
 /**
- *
  * @author hthoma
  */
 public class Student {
-    String FName, Mname, Lname, SID, RNum, Delegation, PhoneNum, Role, DName;
-    Boolean PaidUp;
 
-    public String getDName() {
-        return DName;
+    private String FName, Mname, Lname, SID, RNum, Delegation, PhoneNum, Role, DName;
+    private boolean PaidUp;
+
+    public Student() {}
+
+    public Student(String FName, String Lname) {
+        this.FName = FName;
+        this.Lname = Lname;
     }
-
-    public void setDName(String DName) {
-        this.DName = DName;
-    }
-
-    public String getRole() {
-        return Role;
-    }
-
-    public void setRole(String Role) {
-        this.Role = Role;
-    }
-
-    public Boolean getPaidUp() {
-        return PaidUp;
-    }
-
-    public void setPaidUp(Boolean PaidUp) {
-        this.PaidUp = PaidUp;
-    }
-    
-    
-    public Student() {
-    }
-
-
 
     public Student(String FName, String Mname, String Lname, String SID, String RNum, String Delegation, String PhoneNum) {
         this.FName = FName;
@@ -51,16 +23,6 @@ public class Student {
         this.RNum = RNum;
         this.Delegation = Delegation;
         this.PhoneNum = PhoneNum;
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" + "FName=" + FName + ", Mname=" + Mname + ", Lname=" + Lname + ", SID=" + SID + ", RNum=" + RNum + ", Delegation=" + Delegation + ", PhoneNum=" + PhoneNum + '}';
-    }
-
-    public Student(String FName, String Lname) {
-        this.FName = FName;
-        this.Lname = Lname;
     }
 
     public String getFName() {
@@ -118,5 +80,34 @@ public class Student {
     public void setPhoneNum(String PhoneNum) {
         this.PhoneNum = PhoneNum;
     }
-    
+
+    public String getDName() {
+        return DName;
+    }
+
+    public void setDName(String DName) {
+        this.DName = DName;
+    }
+
+    public String getRole() {
+        return Role;
+    }
+
+    public void setRole(String Role) {
+        this.Role = Role;
+    }
+
+    public Boolean getPaidUp() {
+        return PaidUp;
+    }
+
+    public void setPaidUp(boolean PaidUp) {
+        this.PaidUp = PaidUp;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" + "FName=" + FName + ", Mname=" + Mname + ", Lname=" + Lname + ", SID=" + SID + ", RNum=" + RNum + ", Delegation=" + Delegation + ", PhoneNum=" + PhoneNum + '}';
+    }
+
 }

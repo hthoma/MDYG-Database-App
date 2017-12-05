@@ -1,16 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package databaseproject;
 
 /**
- *
  * @author hthoma
  */
 public class Staff {
-    String RoomNum,ID;
+
+    private String RoomNum, ID;
 
     public Staff(String RoomNum, String ID) {
         this.RoomNum = RoomNum;
@@ -32,6 +27,5 @@ public class Staff {
     public void setID(String ID) {
         this.ID = ID;
     }
-    
-    
+
 }
