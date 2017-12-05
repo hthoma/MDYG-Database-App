@@ -38,10 +38,8 @@
             <Button id="inspectstudent" fx:id="inspectstudent" layoutX="14.0" layoutY="195.0" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="27.0" prefWidth="199.0" text="Inspect Student" />
             <Button id="addstudent" fx:id="addstudent" layoutX="648.0" layoutY="195.0" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="27.0" prefWidth="100.0" text="Add Student" />
             <Text layoutX="14.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-            <Text layoutX="475.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bill Number" wrappingWidth="72.0791015625" />
             <Text layoutX="181.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Number" />
             <TextField id="PhoneNumtb" fx:id="PhoneNumtb" layoutX="300.0" layoutY="53.0" prefHeight="17.0" prefWidth="149.0" />
-            <TextField id="BillNumtb" fx:id="BillNumtb" layoutX="475.0" layoutY="53.0" prefHeight="27.0" prefWidth="88.0" />
             <TextField id="RoomNumtb" fx:id="RoomNumtb" layoutX="181.0" layoutY="54.0" prefHeight="27.0" prefWidth="100.0" />
             <Button id="searchstudent" fx:id="searchstudent" layoutX="632.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="28.0" prefWidth="212.0" text="Search" />
             <Text layoutX="302.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Num" wrappingWidth="72.0791015625" />

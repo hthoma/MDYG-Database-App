@@ -56,6 +56,7 @@ public class MainViewController implements Initializable {
 @FXML private TextField PhoneNumtb;
 @FXML private TextField RoomNumtb;
 @FXML private TextField BillNumtb;
+@FXML private TextField SIDtb;
 @FXML private Button searchstudent;
       @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -114,7 +115,7 @@ public class MainViewController implements Initializable {
             break;
             case "searchstudent":  
                  sqlconnector sql = new sqlconnector();
-                 ArrayList<Student> searchedstudents = sql.searchStudent(Nametb.getText(),RoomNumtb.getText(),BillNumtb.getText(),PhoneNumtb.getText());
+                 ArrayList<Student> searchedstudents = sql.searchStudent(Nametb.getText(),RoomNumtb.getText(),PhoneNumtb.getText(),SIDtb.getText());
                   ObservableList<Student> oListStudent = FXCollections.observableArrayList(searchedstudents);
                    TableColumn<Student, String> FnameColumn = new TableColumn<>("First Name");
         FnameColumn.setMinWidth(120);

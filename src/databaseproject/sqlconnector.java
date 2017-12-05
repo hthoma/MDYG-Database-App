@@ -44,7 +44,7 @@ public class sqlconnector {
         return true;
     }
     
-    public ArrayList<Student> searchStudent(String Name,String RoomNum,String BillNum,String PhoneNum) throws SQLException{
+    public ArrayList<Student> searchStudent(String Name,String RoomNum,String PhoneNum,String ID) throws SQLException{
         ArrayList<Student> students;
         students = downloadStudents();
         
@@ -74,11 +74,13 @@ public class sqlconnector {
 }
         }
                  
-           if(!BillNum.isEmpty()){
+       
+        
+            if(!ID.isEmpty()){
            Iterator<Student> iter = students.iterator();
            while (iter.hasNext()) {
             Student checkstudent = iter.next();
-        if (!(checkstudent.getRNum()).contains(BillNum))//Not implemented yet!
+        if (!(checkstudent.getSID()).contains(ID))
             iter.remove();
 }
         }
