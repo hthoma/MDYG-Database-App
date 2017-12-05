@@ -60,6 +60,8 @@ public class MainViewController implements Initializable {
 @FXML private TextField BillNumtb;
 @FXML private TextField SIDtb;
 @FXML private Button searchstudent;
+@FXML private MenuItem quitbutton;
+
       @Override
     public void initialize(URL url, ResourceBundle rb) {
       renderList();
@@ -83,6 +85,8 @@ public class MainViewController implements Initializable {
                              ((Node)(event.getSource())).getScene().getWindow().hide();
                          break; 
             case "showstaff": renderStaff();
+            break;
+            case "quitbutton": System.exit(0);
             break;
         }
         

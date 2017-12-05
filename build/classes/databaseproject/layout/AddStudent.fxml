@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="303.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="databaseproject.layoutcontroller.AddStudentController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="477.0" prefWidth="641.0" VBox.vgrow="ALWAYS">
+      <children>
+            <Text layoutX="24.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
+            <Text layoutX="26.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Number" />
+            <Text layoutX="26.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delegation Name" />
+            <Text layoutX="28.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Emergency Phone" />
+            <Text layoutX="24.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Middle Name" />
+            <Text layoutX="29.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" />
+            <TextField id="FNametb" fx:id="FNametb" layoutX="160.0" layoutY="23.0" prefHeight="17.0" prefWidth="149.0" />
+            <TextField id="MNametb" fx:id="MNametb" layoutX="160.0" layoutY="67.0" prefHeight="27.0" prefWidth="149.0" />
+            <TextField id="LNametb" fx:id="LNametb" layoutX="161.0" layoutY="105.0" prefHeight="27.0" prefWidth="149.0" />
+            <TextField id="RoomNumtb" fx:id="RoomNumtb" layoutX="158.0" layoutY="141.0" prefHeight="27.0" prefWidth="150.0" />
+            <TextField id="DelegationNumtb" fx:id="DelegationNumtb" layoutX="158.0" layoutY="177.0" prefHeight="27.0" prefWidth="150.0" />
+            <TextField id="PhoneNumtb" fx:id="PhoneNumtb" layoutX="156.0" layoutY="215.0" prefHeight="27.0" prefWidth="150.0" />
+            <Button id="addstudent" fx:id="addstudent" layoutX="95.0" layoutY="268.0" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="27.0" prefWidth="132.0" text="Create Student" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>

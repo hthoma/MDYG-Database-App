@@ -178,13 +178,16 @@ public class sqlconnector {
                 Student astudent;
             astudent = new Student(results.getString("FName"),results.getString("MName"),results.getString("LName"),results.getString("StudentID"), results.getString("RoomNum"), results.getString("DelegID"), results.getString("PhoneNum"));
                 
-/*
+
              Statement queryStatement2 = connection.createStatement();
                     String querys2= "Select * from Delegation where DelID = '" + astudent.getDelegation() + "';";
                     ResultSet resultsDeleg = queryStatement2.executeQuery(querys2);
                     resultsDeleg.next();
                    astudent.setDName(resultsDeleg.getString("DName"));
-                    Statement queryStatement3 = connection.createStatement();
+                   
+            
+            
+    /*        Statement queryStatement3 = connection.createStatement();
                     String querys3= "select * " +
                                "from Student, Paymentplan " +
                         "where Student.PayID = Paymentplan.PayID " +
@@ -199,19 +202,19 @@ public class sqlconnector {
                     else
                     astudent.setPaidUp(false);
                     
-              
+              */
                      Statement queryStatement4 = connection.createStatement();
-                    String querys4= "select FName, LName, Role" +
+                    String querys4= "select *" +
                                      "from Student, Role " +
                                     "where Student.StudentID = Role.StudID " +
-                                    "and Student.StudentID = '" + astudent.getSID() + "';";
+                                    "and StudID = '" + astudent.getSID() + "';";
                     resultsDeleg = queryStatement4.executeQuery(querys4);
                     resultsDeleg.next();
                     astudent.setRole(resultsDeleg.getString("Role"));   
-*/
+
                   
                   Statement queryStatement5 = connection.createStatement();
-                    String querys5= "select *" +
+                  String querys5= "select *" +
                                      "from Delegation, Advisor  " +
                                     "where Delegation.AdvID = Advisor.AdvisorID " +
                                     "and Delegation.DelID = '" + astudent.getDelegation() + "';";
