@@ -10,18 +10,38 @@ package databaseproject;
  * @author hthoma
  */
 public class Student {
-    String FName, Mname, Lname, SID, RNum, Delegation, PhoneNum, comments;
+    String FName, Mname, Lname, SID, RNum, Delegation, PhoneNum, Role, DName;
+    Boolean PaidUp;
 
+    public String getDName() {
+        return DName;
+    }
+
+    public void setDName(String DName) {
+        this.DName = DName;
+    }
+
+    public String getRole() {
+        return Role;
+    }
+
+    public void setRole(String Role) {
+        this.Role = Role;
+    }
+
+    public Boolean getPaidUp() {
+        return PaidUp;
+    }
+
+    public void setPaidUp(Boolean PaidUp) {
+        this.PaidUp = PaidUp;
+    }
+    
+    
     public Student() {
     }
 
-    public String getComments() {
-        return comments;
-    }
 
-    public void setComments(String comments) {
-        this.comments = comments;
-    }
 
     public Student(String FName, String Mname, String Lname, String SID, String RNum, String Delegation, String PhoneNum) {
         this.FName = FName;

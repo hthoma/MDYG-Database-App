@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,8 +18,7 @@
       <menus>
         <Menu mnemonicParsing="false" text="File">
           <items>
-            <MenuItem mnemonicParsing="false" text="Search" />
-                  <MenuItem mnemonicParsing="false" text="Add " />
+                  <MenuItem mnemonicParsing="false" text="Show Staff" />
                   <MenuItem mnemonicParsing="false" text="Quit" />
           </items>
         </Menu>
@@ -45,6 +46,18 @@
             <Button id="searchstudent" fx:id="searchstudent" layoutX="632.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="28.0" prefWidth="212.0" text="Search" />
             <Text layoutX="302.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Num" wrappingWidth="72.0791015625" />
             <TextField id="Nametb" fx:id="Nametb" layoutX="14.0" layoutY="53.0" prefHeight="27.0" prefWidth="149.0" />
+            <SplitMenuButton id="Roletb" fx:id="Roletb" layoutX="16.0" layoutY="132.0" mnemonicParsing="false" text="Pick Role">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Senator" />
+                <MenuItem mnemonicParsing="false" text="Delegate" />
+                  <MenuItem mnemonicParsing="false" text="Press" />
+                  <MenuItem mnemonicParsing="false" text="Lobbyist" />
+              </items>
+            </SplitMenuButton>
+            <Text layoutX="18.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Program Role" />
+            <CheckBox layoutX="632.0" layoutY="94.0" mnemonicParsing="false" text="Paid Up" />
+            <TextField id="SIDtb" fx:id="SIDtb" layoutX="139.0" layoutY="132.0" prefHeight="27.0" prefWidth="149.0" />
+            <Text layoutX="139.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student ID" />
       </children>
     </AnchorPane>
   </children>

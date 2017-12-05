@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="525.0" prefWidth="641.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="databaseproject.layoutcontroller.StudentViewController">
+<VBox prefHeight="323.0" prefWidth="638.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="databaseproject.layoutcontroller.StudentViewController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="477.0" prefWidth="641.0" VBox.vgrow="ALWAYS">
       <children>
-            <TextArea id="commenttext" layoutX="28.0" layoutY="323.0" prefHeight="188.0" prefWidth="595.0" />
             <Text layoutX="27.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
             <Text layoutX="27.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Number" />
             <Text layoutX="23.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student ID" />
-            <Text layoutX="32.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comments" />
             <Text layoutX="41.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rooming With:" />
             <Text layoutX="28.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delegation Name" />
             <Text layoutX="28.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delegation Number" />
@@ -23,20 +21,22 @@
             <Text layoutX="321.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comittee" />
             <Text layoutX="321.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="House/Senate" />
             <Text layoutX="321.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Comittee Status" />
-            <Text fx:id="SIDte" id="SIDte" layoutX="95.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="166.0" />
-            <Text fx:id="SNamete" id="SNamete" layoutX="71.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="190.0" />
-            <Text fx:id="RoomNumte" id="RoomNumte" layoutX="125.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="82.7924780844478" />
-            <Text fx:id="Roomate2te" id="Roomate2te" layoutX="40.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="148.96679531026166" />
-            <Text fx:id="Roomate1te" id="Roomate1te" layoutX="40.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="148.96679531026166" />
-            <Text fx:id="Roomate3te" id="Roomate3te" layoutX="40.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="148.96679531026166" />
-            <Text fx:id="Delegationte" id="Delegationte" layoutX="146.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="166.0" />
-            <Text fx:id="DelegationNumte" id="DelegationNumte" layoutX="155.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="166.0" />
-            <Text fx:id="PhoneNumte" id="PhoneNumte" layoutX="208.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="166.0" />
-            <Text fx:id="Rolete" id="Rolete" layoutX="415.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="166.0" />
-            <Text fx:id="BillNumte" id="BillNumte" layoutX="404.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="82.7924780844478" />
-            <Text fx:id="Comitteete" id="Comitteete" layoutX="385.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="148.96679531026166" />
-            <Text fx:id="Comitteestatuste" id="Comitteestatuste" layoutX="478.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="148.96679531026166" />
-            <Text fx:id="HouseSenatete" id="HouseSenatete" layoutX="412.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="148.96679531026166" />
+            <Text id="SIDte" fx:id="SIDte" layoutX="95.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="166.0" />
+            <Text id="SNamete" fx:id="SNamete" layoutX="71.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="190.0" />
+            <Text id="RoomNumte" fx:id="RoomNumte" layoutX="125.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="82.7924780844478" />
+            <Text id="Roomate2te" fx:id="Roomate2te" layoutX="40.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="148.96679531026166" />
+            <Text id="Roomate1te" fx:id="Roomate1te" layoutX="40.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="148.96679531026166" />
+            <Text id="Roomate3te" fx:id="Roomate3te" layoutX="40.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="148.96679531026166" />
+            <Text id="Delegationte" fx:id="Delegationte" layoutX="146.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="166.0" />
+            <Text id="DelegationNumte" fx:id="DelegationNumte" layoutX="155.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="166.0" />
+            <Text id="PhoneNumte" fx:id="PhoneNumte" layoutX="208.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="166.0" />
+            <Text id="Rolete" fx:id="Rolete" layoutX="415.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="166.0" />
+            <Text id="BillNumte" fx:id="BillNumte" layoutX="404.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="82.7924780844478" />
+            <Text id="Comitteete" fx:id="Comitteete" layoutX="385.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="148.96679531026166" />
+            <Text id="Comitteestatuste" fx:id="Comitteestatuste" layoutX="478.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="148.96679531026166" />
+            <Text id="HouseSenatete" fx:id="HouseSenatete" layoutX="412.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="148.96679531026166" />
+            <Button id="ChangeRoom" fx:id="ChangeRoom" layoutX="356.0" layoutY="282.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="118.0" text="Change Room" />
+            <Button id="ViewAdvisors" fx:id="ViewAdvisors" layoutX="509.0" layoutY="282.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="118.0" text="View Advisors" />
       </children>
     </AnchorPane>
   </children>

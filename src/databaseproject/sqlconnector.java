@@ -152,21 +152,27 @@ public class sqlconnector {
     }
     public ArrayList<Student> downloadStudents() throws SQLException{
         ArrayList<Student> students = new ArrayList<Student>();
-          PreparedStatement updateStaff;
+       
         Statement queryStatement = connection.createStatement();
-        updateStaff = null;
+
             String querys= "SELECT * FROM mjubil1db.Student;";
             ResultSet results = queryStatement.executeQuery(querys);
             while(results.next())
             {
                 Student astudent;
             astudent = new Student(results.getString("FName"),results.getString("MName"),results.getString("LName"),results.getString("StudentID"), results.getString("RoomNum"), results.getString("DelegID"), results.getString("PhoneNum"));
-                students.add(astudent);
-            }   
+                
 
-        
+             Statement queryStatement2 = connection.createStatement();
+                    String querys2= "Select * from Delegation where DelID = '" + astudent.getDelegation() + "';";
+                    ResultSet resultsDeleg = queryStatement2.executeQuery(querys2);
+                    resultsDeleg.next();
+                   astudent.setDName(resultsDeleg.getString("DName"));
+                   System.out.println(" Set delegation Name" + resultsDeleg.getString(1) );
+            students.add(astudent);
+            }   
+           
         return students;
-        
         
     }
 
