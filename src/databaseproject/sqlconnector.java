@@ -35,6 +35,24 @@ public class sqlconnector {
     
      
  }   
+    public ArrayList<Staff> downloadStaff() throws SQLException{
+        ArrayList<Staff> staff = new ArrayList<Staff>();
+       
+        Statement queryStatement = connection.createStatement();
+
+            String querys= "SELECT * FROM mjubil1db.Staff;";
+            ResultSet results = queryStatement.executeQuery(querys);
+            while(results.next())
+            {
+              
+            
+                Staff astaff;
+                astaff = new Staff(results.getString("StaffID"),results.getString("RoomNum"));
+                    staff.add(astaff);
+                    
+                    }
+                return staff;
+    }
 
     public boolean connectDb() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException{
         

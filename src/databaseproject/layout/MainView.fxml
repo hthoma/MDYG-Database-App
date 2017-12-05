@@ -18,7 +18,7 @@
       <menus>
         <Menu mnemonicParsing="false" text="File">
           <items>
-                  <MenuItem mnemonicParsing="false" text="Show Staff" />
+                  <MenuItem id="showstaff" fx:id="showstaff" mnemonicParsing="false" onAction="#handleMenuClick" text="Show Staff" />
                   <MenuItem mnemonicParsing="false" text="Quit" />
           </items>
         </Menu>

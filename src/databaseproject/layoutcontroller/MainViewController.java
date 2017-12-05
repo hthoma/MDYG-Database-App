@@ -5,6 +5,7 @@
  */
 package databaseproject.layoutcontroller;
 
+import databaseproject.Staff;
 import databaseproject.Student;
 import databaseproject.sqlconnector;
 import java.io.IOException;
@@ -48,7 +49,8 @@ public class MainViewController implements Initializable {
 
 @FXML private Menu moreselect;
 @FXML private MenuItem helpselect;   
-@FXML private TableView<Student> StudentTable ;   
+@FXML private MenuItem showstaff; 
+@FXML private TableView StudentTable ;   
 @FXML private Button refreshlist;
 @FXML private Button inspectstudent;
 @FXML private Button addstudent;
@@ -80,6 +82,8 @@ public class MainViewController implements Initializable {
                              stage.show();
                              ((Node)(event.getSource())).getScene().getWindow().hide();
                          break; 
+            case "showstaff": renderStaff();
+            break;
         }
         
     }   
@@ -93,7 +97,7 @@ public class MainViewController implements Initializable {
             break;
             case "inspectstudent": 
            if(StudentTable.getSelectionModel().getSelectedItem() != null){
-            Student astudent = StudentTable.getSelectionModel().getSelectedItem();
+            Student astudent = (Student)StudentTable.getSelectionModel().getSelectedItem();
            sqlconnector sql = new sqlconnector();
             sql.setstudent(astudent);
             System.out.println(astudent.getFName() + " selected!");
@@ -155,6 +159,27 @@ public class MainViewController implements Initializable {
     }   
     
     
+    private void renderStaff(){
+         sqlconnector sql = new sqlconnector();
+        Connection connect = sql.getConnector();
+         ArrayList<Staff> staff = null;
+         try {
+        staff = sql.downloadStaff();
+    } catch (SQLException ex) {
+        Logger.getLogger(MainViewController.class.getName()).log(Level.SEVERE, null, ex);
+    }
+          ObservableList<Staff> oListStaff = FXCollections.observableArrayList(staff);
+          TableColumn<Staff, String> StaffID = new TableColumn<>("Staff ID");
+        StaffID.setMinWidth(120);
+        StaffID.setCellValueFactory(new PropertyValueFactory<>("ID"));
+        TableColumn<Staff, String> RoomNum = new TableColumn<>("Room #");
+        RoomNum.setMinWidth(60);
+        RoomNum.setCellValueFactory(new PropertyValueFactory<>("RoomNum"));
+        StudentTable.setItems(oListStaff);
+    StudentTable.getColumns().clear();
+    StudentTable.getColumns().addAll(StaffID,RoomNum);
+        
+    }
     
     private void renderList(){
           sqlconnector sql = new sqlconnector();
